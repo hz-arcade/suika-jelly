@@ -9,6 +9,7 @@ export const zhTW: Strings = {
   'menu.newGame': '新遊戲',
   'menu.language': '語言',
   'menu.sound': '聲音',
+  'menu.arcade': '返回遊戲廳',
   'hud.score': '得分',
   'hud.best': '最高分',
   'hud.next': '下一個',

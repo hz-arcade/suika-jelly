@@ -255,7 +255,21 @@ export class Hud {
       p.appendChild(more);
     }
     p.appendChild(this.langRow());
+    p.appendChild(this.arcadeLink());
     this.show(p);
+  }
+
+  /** Plain link to the HZ Arcade catalog at the site root. Title screen only. */
+  private arcadeLink(): HTMLElement {
+    const wrap = make('div', 'arcade-row');
+    const a = make('a', 'arcade-link');
+    a.id = 'arcadeLink';
+    a.href = '/';
+    const arrow = make('span', 'arcade-arrow', '←');
+    arrow.setAttribute('aria-hidden', 'true');
+    a.append(arrow, make('span', '', t('menu.arcade')));
+    wrap.appendChild(a);
+    return wrap;
   }
 
   gameOver(data: OverData): void {

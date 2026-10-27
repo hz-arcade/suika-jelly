@@ -7,6 +7,7 @@ export const en = {
   'menu.newGame': 'New game',
   'menu.language': 'Language',
   'menu.sound': 'Sound',
+  'menu.arcade': 'Back to arcade',
   'hud.score': 'Score',
   'hud.best': 'Best',
   'hud.next': 'Next',

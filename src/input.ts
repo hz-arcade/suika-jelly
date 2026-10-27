@@ -49,7 +49,10 @@ export function bindInput(canvas: HTMLCanvasElement, game: Game, renderer: Rende
     const el = ev.target as HTMLElement | null;
     if (el && (el.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName))) return;
     if (ev.repeat && (ev.code === 'Space' || ev.code === 'Enter')) return;
-    if ((ev.target as HTMLElement | null)?.tagName === 'BUTTON' && (ev.code === 'Space' || ev.code === 'Enter')) return;
+    // Space/Enter on a focused button or link activates it (e.g. the "Back to arcade" link);
+    // preventDefault below would otherwise swallow the navigation.
+    const tag = (ev.target as HTMLElement | null)?.tagName;
+    if ((tag === 'BUTTON' || tag === 'A') && (ev.code === 'Space' || ev.code === 'Enter')) return;
     switch (ev.code) {
       case 'ArrowLeft':
       case 'KeyA':

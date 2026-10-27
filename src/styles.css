@@ -204,6 +204,26 @@ html, body {
 .btn.secondary.active { background: linear-gradient(#ffe9a8, #ffd166); box-shadow: 0 3px 0 #c99a2e; }
 .row { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-top: 10px; }
 .lang-row { margin-top: 14px; }
+/* Quiet link back to the HZ Arcade catalog, under the language picker on the title panel. */
+.arcade-row { margin-top: 14px; }
+.arcade-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  color: var(--ink-soft);
+  font: 600 14px var(--font);
+  text-decoration: none;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: background-color 0.15s, color 0.15s;
+}
+.arcade-link:hover { color: var(--ink); background: rgba(255, 255, 255, 0.7); }
+.arcade-link:active { transform: translateY(1px); }
+.arcade-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; color: var(--ink); }
+.arcade-arrow { font-size: 15px; line-height: 1; }
 .big-score { font-size: clamp(34px, 8vw, 48px); font-weight: 800; color: var(--green-dark); margin: 6px 0; font-variant-numeric: tabular-nums; }
 .new-best { display: inline-block; background: linear-gradient(#ffe9a8, #ffd166); color: #8a5a00; font-weight: 800; padding: 4px 14px; border-radius: 999px; font-size: 15px; animation: pop 0.5s ease-out; }
 @keyframes pop { 0% { transform: scale(0.4); } 70% { transform: scale(1.15); } 100% { transform: scale(1); } }

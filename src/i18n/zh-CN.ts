@@ -9,6 +9,7 @@ export const zhCN: Strings = {
   'menu.newGame': '新游戏',
   'menu.language': '语言',
   'menu.sound': '声音',
+  'menu.arcade': '返回游戏厅',
   'hud.score': '得分',
   'hud.best': '最高分',
   'hud.next': '下一个',
