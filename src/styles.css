@@ -204,6 +204,43 @@ html, body {
 .btn.secondary.active { background: linear-gradient(#ffe9a8, #ffd166); box-shadow: 0 3px 0 #c99a2e; }
 .row { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-top: 10px; }
 .lang-row { margin-top: 14px; }
+.lang-select {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  background: #fff;
+  color: var(--ink);
+  border-radius: 999px;
+  box-shadow: 0 3px 0 #d9c2b3;
+  cursor: pointer;
+}
+.lang-globe { position: absolute; left: 14px; font-size: 15px; line-height: 1; pointer-events: none; }
+.lang-select::after {
+  content: '';
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  margin-top: -2px;
+  border: 5px solid transparent;
+  border-bottom: 0;
+  border-top-color: currentColor;
+  opacity: 0.7;
+  pointer-events: none;
+}
+.lang-select select {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  font: 700 15px var(--font);
+  padding: 9px 38px 9px 40px;
+  cursor: pointer;
+}
+.lang-select select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.lang-select option { color: #222; background: #fff; }
 /* Quiet link back to the HZ Arcade catalog, under the language picker on the title panel. */
 .arcade-row { margin-top: 14px; }
 .arcade-link {

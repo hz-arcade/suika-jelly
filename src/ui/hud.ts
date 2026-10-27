@@ -205,11 +205,24 @@ export class Hud {
     return row;
   }
 
+  /** Language dropdown. A native select, so phones show their own picker. */
   private langRow(): HTMLElement {
     const row = make('div', 'row lang-row');
+    const wrap = make('label', 'lang-select');
+    const globe = make('span', 'lang-globe', '🌐');
+    globe.setAttribute('aria-hidden', 'true');
+    const select = make('select');
+    select.id = 'langSelect';
+    select.setAttribute('aria-label', t('menu.language'));
     for (const lang of LANGS) {
-      row.appendChild(button('btn secondary' + (getLang() === lang ? ' active' : ''), LANG_NAMES[lang as Lang], () => setLang(lang)));
+      const opt = make('option', '', LANG_NAMES[lang]);
+      opt.value = lang;
+      opt.selected = lang === getLang();
+      select.appendChild(opt);
     }
+    select.addEventListener('change', () => setLang(select.value as Lang));
+    wrap.append(globe, select);
+    row.appendChild(wrap);
     return row;
   }
 
